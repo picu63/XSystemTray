@@ -26,5 +26,10 @@ namespace XSystemTray
             this.Top = SystemParameters.WorkArea.Height - Application.Current.MainWindow.Height;
             this.Left = SystemParameters.WorkArea.Width - Application.Current.MainWindow.Width;
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Visibility = Visibility.Hidden;
+        }
     }
 }

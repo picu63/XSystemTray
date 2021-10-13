@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows;
-using TrayIcon.ViewModels;
-using XSystemTray;
+using XSystemTray.ViewModels;
+using Application = System.Windows.Application;
 using Forms = System.Windows.Forms;
+using MessageBox = System.Windows.MessageBox;
 
-namespace TrayIcon
+namespace XSystemTray
 {
     public partial class App : Application
     {

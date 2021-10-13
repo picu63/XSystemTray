@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace TrayIcon.Commands
+namespace XSystemTray.Commands
 {
     public class NotifyCommand : BaseCommand
     {

@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows.Input;
 
-namespace TrayIcon.Commands
+namespace XSystemTray.Commands
 {
     public abstract class BaseCommand : ICommand
     {

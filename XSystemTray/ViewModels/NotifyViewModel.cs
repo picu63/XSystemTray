@@ -1,8 +1,8 @@
 ﻿using System.Windows.Forms;
 using System.Windows.Input;
-using TrayIcon.Commands;
+using XSystemTray.Commands;
 
-namespace TrayIcon.ViewModels
+namespace XSystemTray.ViewModels
 {
     public class NotifyViewModel : ViewModelBase
     {
