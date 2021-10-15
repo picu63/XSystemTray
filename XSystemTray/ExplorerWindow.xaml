@@ -8,30 +8,33 @@
     Title="Tray Icon"
     Width="300"
     Height="450"
-    mc:Ignorable="d" WindowStyle="None">
+    mc:Ignorable="d" WindowStyle="None"
+    ShowInTaskbar="False">
     <Grid>
         <ListView></ListView>
-        <Button Width="20" Height="20"
-                HorizontalAlignment="Right"
-                VerticalAlignment="Top"
-
-                Content="X"  BorderThickness="0,0,0,0" Click="Button_Click">
+        <Button HorizontalAlignment="Right"
+                VerticalAlignment="Top" 
+                Content="&#x26AB;&#x26AB;&#x26AB;"
+                FontSize="4" Height="20" Padding="7 5">
+            <Button.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Zamknij aplikację" Click="CloseApp"></MenuItem>
+                </ContextMenu>
+            </Button.ContextMenu>
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
-                    <Setter Property="Background" Value="DarkGray"/>
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="{x:Type Button}">
-                                <Border Background="{TemplateBinding Background}">
-                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
                     <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="Red"/>
-                        </Trigger>
+                        <EventTrigger RoutedEvent="Click">
+                            <EventTrigger.Actions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="ContextMenu.IsOpen">
+                                            <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="True"/>
+                                        </BooleanAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger.Actions>
+                        </EventTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>

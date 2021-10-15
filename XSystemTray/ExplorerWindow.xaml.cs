@@ -20,16 +20,23 @@ namespace XSystemTray
     /// </summary>
     public partial class ExplorerWindow : Window
     {
-        public ExplorerWindow()
+        public string DirectoryPath { get; set; }
+        public ExplorerWindow(string path)
         {
             InitializeComponent();
             this.Top = SystemParameters.WorkArea.Height - Application.Current.MainWindow.Height;
             this.Left = SystemParameters.WorkArea.Width - Application.Current.MainWindow.Width;
+            DirectoryPath = path;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Visibility = Visibility.Hidden;
+        }
+
+        private void CloseApp(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }
